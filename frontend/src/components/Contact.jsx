@@ -124,6 +124,8 @@ const Contact = () => {
     }
   };
 
+  // Contact information array for easy rendering
+  // Each item includes icon, label, value, and optional href for clickable links
   const contactInfo = [
     { icon: Mail, label: 'Email', value: personalInfo.email, href: `mailto:${personalInfo.email}` },
     { icon: Phone, label: 'Phone', value: personalInfo.phone, href: `tel:${personalInfo.phone}` },
