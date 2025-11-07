@@ -277,13 +277,33 @@ const Contact = () => {
                 ></textarea>
               </div>
               
+              {/* Submit Button - Shows loading state during submission */}
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-lg px-6 py-4 font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className={`w-full bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-lg px-6 py-4 font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 ${
+                  isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+                }`}
               >
-                <Send size={20} />
-                Send Message
+                {isSubmitting ? (
+                  <>
+                    <Loader2 size={20} className="animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send size={20} />
+                    Send Message
+                  </>
+                )}
               </button>
+              
+              {/* Error message display */}
+              {error && (
+                <div className="text-red-400 text-sm text-center mt-2">
+                  {error}
+                </div>
+              )}
             </form>
           </div>
         </div>
