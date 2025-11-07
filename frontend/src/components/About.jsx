@@ -1,3 +1,22 @@
+/**
+ * About Component
+ * 
+ * Provides detailed information about Ashley's background, education, and philosophy.
+ * 
+ * Sections:
+ * 1. Personal bio - Journey and expertise summary
+ * 2. Education details - Diploma and institution
+ * 3. Highlight cards - Key areas of expertise (4 cards)
+ * 4. Philosophy section - 4 core principles guiding work approach
+ * 
+ * Features:
+ * - Two-column responsive layout
+ * - Glassmorphic cards with hover effects
+ * - Professional workspace imagery
+ * - Smooth animations on scroll
+ * - Numbered philosophy cards for easy reading
+ */
+
 import React from 'react';
 import { Code, Database, Server, Award } from 'lucide-react';
 import { personalInfo, education, philosophy } from '../mock';
