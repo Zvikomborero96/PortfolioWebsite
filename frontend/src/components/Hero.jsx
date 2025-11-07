@@ -1,3 +1,19 @@
+/**
+ * Hero Component
+ * 
+ * The first section visitors see when landing on the portfolio.
+ * Features:
+ * - Large heading with gradient name styling
+ * - Professional title and tagline
+ * - Social media links (GitHub, LinkedIn, Email)
+ * - Call-to-action buttons
+ * - Glassmorphic profile card with status info
+ * - Animated background with floating orbs
+ * - Scroll indicator to next section
+ * 
+ * Design: Uses glassmorphism, animations, and modern gradient effects
+ */
+
 import React from 'react';
 import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
 import { personalInfo } from '../mock';
