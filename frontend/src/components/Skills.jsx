@@ -1,8 +1,31 @@
+/**
+ * Skills Component
+ * 
+ * Interactive showcase of technical skills across different categories.
+ * 
+ * Features:
+ * - Tabbed interface with 4 categories:
+ *   1. Frontend (React, JavaScript, CSS, etc.)
+ *   2. Backend (Python, Django, FastAPI, databases)
+ *   3. System Admin (Linux, networking, server management)
+ *   4. Tools & Others (Git, Docker, Agile, etc.)
+ * 
+ * - Each skill displays:
+ *   * Skill name
+ *   * Proficiency percentage
+ *   * Animated progress bar
+ * 
+ * - Smooth tab switching with visual feedback
+ * - Responsive grid layout
+ * - Glassmorphic design consistent with site theme
+ */
+
 import React, { useState } from 'react';
 import { Monitor, Server, Settings, Wrench } from 'lucide-react';
 import { skills } from '../mock';
 
 const Skills = () => {
+  // Active tab state - controls which skill category is displayed
   const [activeTab, setActiveTab] = useState('frontend');
 
   const tabs = [
