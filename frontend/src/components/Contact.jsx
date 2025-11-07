@@ -1,29 +1,127 @@
+/**
+ * Contact Component
+ * 
+ * This component renders the contact section of the portfolio with:
+ * 1. Contact information display (email, phone, location)
+ * 2. Social media links (GitHub, LinkedIn)
+ * 3. Functional contact form with backend integration
+ * 
+ * Features:
+ * - Form validation (frontend)
+ * - Loading states during submission
+ * - Error handling
+ * - Success/error notifications via toast
+ * - Form reset after successful submission
+ */
+
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Loader2 } from 'lucide-react';
 import { personalInfo } from '../mock';
 import { toast } from '../hooks/use-toast';
+import axios from 'axios';
+
+// Get backend URL from environment variables
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 const Contact = () => {
+  // Form data state - stores user input
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
+  
+  // Loading state - true while submitting to backend
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // Error state - stores validation or network errors
+  const [error, setError] = useState(null);
 
+  /**
+   * Handle input changes
+   * Updates formData state as user types
+   * 
+   * @param {Event} e - Input change event
+   */
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    // Clear any previous errors when user starts typing
+    if (error) setError(null);
   };
 
-  const handleSubmit = (e) => {
+  /**
+   * Handle form submission
+   * Sends contact form data to backend API
+   * 
+   * Process:
+   * 1. Prevent default form behavior
+   * 2. Validate required fields (basic check)
+   * 3. Set loading state
+   * 4. Send POST request to /api/contact
+   * 5. Handle success/error responses
+   * 6. Show toast notification
+   * 7. Reset form on success
+   * 
+   * @param {Event} e - Form submit event
+   */
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Mock form submission
-    console.log('Form submitted:', formData);
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    
+    // Basic validation - check all fields are filled
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      setError('Please fill in all fields');
+      toast({
+        title: "Validation Error",
+        description: "Please fill in all required fields.",
+        variant: "destructive"
+      });
+      return;
+    }
+    
+    // Set loading state - disable form during submission
+    setIsSubmitting(true);
+    setError(null);
+    
+    try {
+      // Send POST request to backend API
+      const response = await axios.post(`${API}/contact`, formData);
+      
+      // Check if submission was successful
+      if (response.data.success) {
+        // Show success toast notification
+        toast({
+          title: "Message Sent! ✓",
+          description: response.data.message || "Thank you for reaching out. I'll get back to you soon.",
+        });
+        
+        // Reset form fields to empty
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        
+        console.log('Message sent successfully:', response.data);
+      }
+    } catch (err) {
+      // Handle errors (network, validation, server errors)
+      console.error('Error sending message:', err);
+      
+      // Extract error message from response or use default
+      const errorMessage = err.response?.data?.detail || 
+                          err.response?.data?.message || 
+                          'Failed to send message. Please try again.';
+      
+      setError(errorMessage);
+      
+      // Show error toast notification
+      toast({
+        title: "Error",
+        description: errorMessage,
+        variant: "destructive"
+      });
+    } finally {
+      // Always reset loading state, whether success or error
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
