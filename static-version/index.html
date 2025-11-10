@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ashley Z Hove - System Administrator & Web Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Ashley Z Hove - Building robust systems and elegant web solutions"
+    />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/icons/favicon-16x16.png"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Lucide Icons (replacing lucide-react) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <!-- Header/Navigation -->
+    <header class="header">
+      <nav class="container">
+        <div class="nav-wrapper flex items-center justify-between">
+          <a href="#" class="logo text-gradient" aria-label="AZH - Home">AZH</a>
+
+          <div class="nav-menu hidden md:flex items-center gap-4">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </div>
+
+          <button
+            id="mobile-menu-button"
+            class="menu-toggle md:hidden"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <i data-lucide="menu" class="icon-menu"></i>
+          </button>
+        </div>
+
+        <div
+          id="mobile-menu"
+          class="mobile-menu hidden md:hidden"
+          aria-labelledby="mobile-menu-button"
+        >
+          <nav class="mobile-nav">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </nav>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section-full">
+      <div class="hero-bg">
+        <div class="hero-blob hero-blob-1"></div>
+        <div class="hero-blob hero-blob-2"></div>
+      </div>
+
+      <div class="container">
+        <div class="hero-content text-center">
+          <h1 class="hero-title animate-fade-in">
+            Hi, I'm <span class="text-gradient">Ashley Z Hove</span>
+          </h1>
+
+          <p class="hero-subtitle animate-fade-in-up">
+            System Administrator & Web Developer
+          </p>
+
+          <p class="hero-description animate-fade-in-up delay-200">
+            Building robust systems and elegant web solutions
+          </p>
+
+          <div class="hero-actions animate-fade-in-up delay-300">
+            <a href="#contact" class="btn btn-primary"> Get in Touch </a>
+            <a href="#projects" class="btn btn-secondary"> View Projects </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Sections -->
+    <main>
+      <!-- About Section -->
+      <section id="about" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+          <h2 class="text-4xl md:text-5xl font-bold mb-8">
+            About <span class="text-gradient">Me</span>
+          </h2>
+          <div class="grid md:grid-cols-2 gap-12">
+            <div class="glass p-8 animate-fade-in-up">
+              <p class="text-lg text-slate-300">
+                I am a passionate System Administrator and Web Developer with a
+                deep understanding of both infrastructure management and web
+                technologies. My approach combines robust system architecture
+                with elegant web solutions.
+              </p>
+            </div>
+            <div class="space-y-6 animate-fade-in-up delay-200">
+              <div class="glass p-6">
+                <h3 class="text-xl font-bold mb-2 text-cyan-400">
+                  Infrastructure Expert
+                </h3>
+                <p class="text-slate-300">
+                  Specializing in designing and maintaining scalable system
+                  architectures that ensure optimal performance and reliability.
+                </p>
+              </div>
+              <div class="glass p-6">
+                <h3 class="text-xl font-bold mb-2 text-cyan-400">
+                  Web Development Enthusiast
+                </h3>
+                <p class="text-slate-300">
+                  Creating modern, responsive web applications with a focus on
+                  user experience and performance.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+          <h2 class="text-4xl md:text-5xl font-bold mb-12">
+            My <span class="text-gradient">Skills</span>
+          </h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass p-6">
+              <h3 class="text-xl font-bold mb-4 text-cyan-400">
+                System Administration
+              </h3>
+              <ul class="space-y-2 text-slate-300">
+                <li>Linux/Unix Systems</li>
+                <li>Server Management</li>
+                <li>Network Administration</li>
+                <li>Security Implementation</li>
+                <li>Cloud Infrastructure</li>
+              </ul>
+            </div>
+            <div class="glass p-6">
+              <h3 class="text-xl font-bold mb-4 text-cyan-400">
+                Web Development
+              </h3>
+              <ul class="space-y-2 text-slate-300">
+                <li>HTML5 & CSS3</li>
+                <li>JavaScript/TypeScript</li>
+                <li>React & Node.js</li>
+                <li>Python & FastAPI</li>
+                <li>Responsive Design</li>
+              </ul>
+            </div>
+            <div class="glass p-6">
+              <h3 class="text-xl font-bold mb-4 text-cyan-400">
+                Tools & Technologies
+              </h3>
+              <ul class="space-y-2 text-slate-300">
+                <li>Docker & Kubernetes</li>
+                <li>Git & CI/CD</li>
+                <li>AWS & Azure</li>
+                <li>Monitoring Tools</li>
+                <li>Database Management</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+          <h2 class="text-4xl md:text-5xl font-bold mb-12">
+            Featured <span class="text-gradient">Projects</span>
+          </h2>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="glass project-card">
+              <img
+                src="assets/project1.jpg"
+                alt="Infrastructure Management Dashboard"
+                class="w-full h-48 object-cover rounded-t-lg"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">
+                  Infrastructure Management Dashboard
+                </h3>
+                <p class="text-slate-300 mb-4">
+                  A comprehensive dashboard for monitoring and managing server
+                  infrastructure with real-time analytics.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="glass-strong px-3 py-1 text-sm">React</span>
+                  <span class="glass-strong px-3 py-1 text-sm">Node.js</span>
+                  <span class="glass-strong px-3 py-1 text-sm">Docker</span>
+                </div>
+                <div class="flex gap-4">
+                  <a href="#" class="btn btn-secondary">View Project</a>
+                  <a href="#" class="btn btn-primary">Live Demo</a>
+                </div>
+              </div>
+            </div>
+            <div class="glass project-card">
+              <img
+                src="assets/project2.jpg"
+                alt="Automated Deployment System"
+                class="w-full h-48 object-cover rounded-t-lg"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">
+                  Automated Deployment System
+                </h3>
+                <p class="text-slate-300 mb-4">
+                  A streamlined system for automating application deployments
+                  across multiple environments.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="glass-strong px-3 py-1 text-sm">Python</span>
+                  <span class="glass-strong px-3 py-1 text-sm">FastAPI</span>
+                  <span class="glass-strong px-3 py-1 text-sm">AWS</span>
+                </div>
+                <div class="flex gap-4">
+                  <a href="#" class="btn btn-secondary">View Project</a>
+                  <a href="#" class="btn btn-primary">Live Demo</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+          <h2 class="text-4xl md:text-5xl font-bold mb-12">
+            Work <span class="text-gradient">Experience</span>
+          </h2>
+          <div class="space-y-8">
+            <div class="glass p-8">
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between mb-4"
+              >
+                <h3 class="text-xl font-bold">Senior System Administrator</h3>
+                <span class="text-cyan-400">2022 - Present</span>
+              </div>
+              <h4 class="text-lg text-slate-300 mb-4">Tech Solutions Inc.</h4>
+              <ul class="space-y-2 text-slate-300">
+                <li>• Led infrastructure modernization initiatives</li>
+                <li>• Implemented automated deployment pipelines</li>
+                <li>• Managed cloud migration projects</li>
+                <li>• Reduced system downtime by 40%</li>
+              </ul>
+            </div>
+            <div class="glass p-8">
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between mb-4"
+              >
+                <h3 class="text-xl font-bold">Web Developer</h3>
+                <span class="text-cyan-400">2020 - 2022</span>
+              </div>
+              <h4 class="text-lg text-slate-300 mb-4">
+                Digital Innovations LLC
+              </h4>
+              <ul class="space-y-2 text-slate-300">
+                <li>• Developed responsive web applications</li>
+                <li>• Optimized application performance</li>
+                <li>• Implemented modern frontend frameworks</li>
+                <li>• Collaborated with cross-functional teams</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+          <h2 class="text-4xl md:text-5xl font-bold mb-12">
+            Get in <span class="text-gradient">Touch</span>
+          </h2>
+          <div class="grid md:grid-cols-2 gap-12">
+            <div class="glass p-8">
+              <form id="contact-form" class="space-y-6">
+                <div>
+                  <label for="name" class="block text-sm font-medium mb-2"
+                    >Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="w-full px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white"
+                  />
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-medium mb-2"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white"
+                  />
+                </div>
+                <div>
+                  <label for="message" class="block text-sm font-medium mb-2"
+                    >Message</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    required
+                    class="w-full px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white"
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-full">
+                  Send Message
+                </button>
+              </form>
+            </div>
+            <div class="space-y-6">
+              <div class="glass p-6">
+                <h3 class="text-xl font-bold mb-2 text-cyan-400">Email</h3>
+                <p class="text-slate-300">contact@ashleyzhove.com</p>
+              </div>
+              <div class="glass p-6">
+                <h3 class="text-xl font-bold mb-2 text-cyan-400">Location</h3>
+                <p class="text-slate-300">Harare, Zimbabwe</p>
+              </div>
+              <div class="glass p-6">
+                <h3 class="text-xl font-bold mb-2 text-cyan-400">Social</h3>
+                <div class="flex gap-4">
+                  <a
+                    href="#"
+                    class="text-slate-300 hover:text-cyan-400"
+                    title="GitHub Profile"
+                    aria-label="Visit my GitHub profile"
+                  >
+                    <i data-lucide="github" class="w-6 h-6"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="text-slate-300 hover:text-cyan-400"
+                    title="LinkedIn Profile"
+                    aria-label="Connect with me on LinkedIn"
+                  >
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="text-slate-300 hover:text-cyan-400"
+                    title="Twitter Profile"
+                    aria-label="Follow me on Twitter"
+                  >
+                    <i data-lucide="twitter" class="w-6 h-6"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-12">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center">
+          <p class="text-slate-400">
+            &copy; 2025 Ashley Z Hove. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
